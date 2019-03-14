@@ -1,12 +1,17 @@
 package com.example.hellomicronaut;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
 public class GreetActivity extends AppCompatActivity {
+
+    @Inject
+    GreetingClient greetingClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +25,8 @@ public class GreetActivity extends AppCompatActivity {
 
         String name = nameText.getText().toString();
 
-        greetingView.setText("Hello " + name);
+        String greeting = greetingClient.getGreeting(name);
+
+        greetingView.setText(greeting);
     }
 }
