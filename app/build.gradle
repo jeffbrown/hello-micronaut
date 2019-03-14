@@ -5,10 +5,11 @@ android {
     defaultConfig {
         applicationId "com.example.hellomicronaut"
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -19,6 +20,12 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/spring-configuration-metadata.json'
+        exclude 'META-INF/config-properties.adoc'
+        exclude 'META-INF/io.netty.versions.properties'
     }
 }
 
@@ -33,19 +40,5 @@ dependencies {
     implementation 'io.micronaut:micronaut-http-client:1.0.4'
     compileOnly 'io.micronaut:micronaut-inject:1.0.4'
     implementation 'com.android.support:multidex:1.0.3'
-}
-
-android {
-    packagingOptions {
-        exclude 'META-INF/INDEX.LIST'
-        exclude 'META-INF/spring-configuration-metadata.json'
-        exclude 'META-INF/config-properties.adoc'
-        exclude 'META-INF/io.netty.versions.properties'
-    }
-
-    defaultConfig {
-        multiDexEnabled true
-        targetSdkVersion 27
-    }
 }
 
