@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="Enter Name Here"
+        android:hint="@string/enter_name_hint"
         android:inputType="text" />
 
     <Button
@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:onClick="greetButtonClicked"
-        android:text="Button" />
+        android:text="@string/greet_button_label" />
 
     <TextView
         android:id="@+id/greetingView"
