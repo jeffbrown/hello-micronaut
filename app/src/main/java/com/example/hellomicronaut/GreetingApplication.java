@@ -1,11 +1,11 @@
 package com.example.hellomicronaut;
 
-import android.support.multidex.MultiDexApplication;
+import android.app.Application;
 
 import io.netty.util.internal.logging.InternalLoggerFactory;
 import io.netty.util.internal.logging.JdkLoggerFactory;
 
-public class GreetingApplication extends MultiDexApplication {
+public class GreetingApplication extends Application {
 
     private HelloMicronautLifecycleCallbacks callback;
 
